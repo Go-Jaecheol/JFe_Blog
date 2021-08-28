@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "jfelog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Personal Blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Jaecheol Go",
   "dependencies": {
     "gatsby": "^3.12.1",
     "gatsby-plugin-feed": "^3.12.0",
@@ -35,7 +32,7 @@
   "devDependencies": {
     "prettier": "2.3.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/Go-Jaecheol/Jfe_Blog#readme",
   "keywords": [
     "gatsby"
   ],
@@ -43,7 +40,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/Go-Jaecheol/Jfe_Blog.git"
   },
   "scripts": {
     "build": "gatsby build",

@@ -1,14 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Jfelog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Jaecheol Go`
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Personal Blog`,
+    siteUrl: `https://jfelog.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      github: `Go-Jaecheol`,
     },
   },
   plugins: [
