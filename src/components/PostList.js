@@ -20,8 +20,8 @@ const PostListWrapper = styled.ul`
 const PostList = ({ posts }) => {
   return (
     <PostListWrapper>{
-        posts.map(({ frontmatter, fields, excerpt, timeToRead }) => {
-            const { title, date, description } = frontmatter;
+        posts.map(({ frontmatter, fields, excerpt}) => {
+            const { title, date, description, category } = frontmatter;
             const { slug } = fields;
             return (
             <PostItem
@@ -29,8 +29,8 @@ const PostList = ({ posts }) => {
                 title={title}
                 date={date}
                 slug={slug}
-                timeToRead={timeToRead}
                 description={description}
+                category={category}
                 excerpt={excerpt}
             />
             );
