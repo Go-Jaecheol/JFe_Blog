@@ -6,9 +6,11 @@ import Bio from "../components/Bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Sidebar from "../components/Sidebar"
+import PostList from "../components/PostList"
 
 const Post = styled.div`
-  padding-left: 400px;
+  margin-left: 400px;
+  margin-top: 50px;
 `;
 
 const BlogIndex = ({ data, location }) => {
@@ -34,38 +36,7 @@ const BlogIndex = ({ data, location }) => {
       <Seo title="All posts" />
       <Sidebar />
       <Post>
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+        <PostList posts={posts}></PostList>
       </Post>
     </Layout>
   )
