@@ -1,5 +1,14 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
+import GlobalStyle from "./GlobalStyle"
+import Footer from "./Footer"
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+`;
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -21,15 +30,10 @@ const Layout = ({ location, title, children }) => {
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
+    <Container data-is-root-path={isRootPath}>
+      <GlobalStyle/>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
-    </div>
+    </Container>
   )
 }
 

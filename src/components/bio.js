@@ -1,13 +1,24 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import styled from "styled-components"
+
+import profile from "../images/profile-pic.png";
+
+const BioWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const BioImage = styled.img`
+  display: fixed;
+  width: 50px;
+  height: 50px;
+`;
+
+const BioName = styled.div`
+  font-size: 20px;
+  margin-top: 20px;
+`;
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -16,10 +27,9 @@ const Bio = () => {
         siteMetadata {
           author {
             name
-            summary
           }
           social {
-            twitter
+            github
           }
         }
       }
@@ -31,24 +41,10 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-        </p>
-      )}
-    </div>
+    <BioWrapper>
+      <BioImage src={profile} alt="profile image"/>
+      <BioName>{author.name}</BioName>
+    </BioWrapper>
   )
 }
 

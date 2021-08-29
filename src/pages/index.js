@@ -1,9 +1,15 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
-import Bio from "../components/bio"
+import Bio from "../components/Bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Sidebar from "../components/Sidebar"
+
+const Post = styled.div`
+  padding-left: 400px;
+`;
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -26,7 +32,8 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <Bio />
+      <Sidebar />
+      <Post>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -59,6 +66,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      </Post>
     </Layout>
   )
 }
