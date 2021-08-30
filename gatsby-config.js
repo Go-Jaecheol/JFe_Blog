@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: `https://jfelog.netlify.app/`,
     social: {
       github: `Go-Jaecheol`,
+      instagram: `j4e_fe`,
     },
   },
   plugins: [
