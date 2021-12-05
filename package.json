@@ -49,7 +49,8 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby clean && gatsby build",
+    "copy": "cp src/components/seo/google511f75415db5288a.html public/",
+    "build": "gatsby clean && gatsby build && npm run copy",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "deploy": "gatsby clean && gatsby build && gh-pages -d public",
