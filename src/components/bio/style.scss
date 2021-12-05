@@ -69,13 +69,15 @@
   }
 
   .thumbnail {
-    display: none;
+    display: block;
     width: 150px;
     height: 150px;
     border-radius: 100%;
+    margin: 0 auto;
 
     @include md {
       display: block;
+      margin: 0;
     }
   }
 }
