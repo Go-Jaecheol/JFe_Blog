@@ -49,7 +49,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "copy": "cp src/components/seo/google511f75415db5288a.html public/",
+    "copy": "cp src/components/seo/google511f75415db5288a.html public/ && cp src/components/seo/navera53ba0c342c6dafe9d57fd5b52df3c1c.html public/",
     "build": "gatsby clean && gatsby build && npm run copy",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
