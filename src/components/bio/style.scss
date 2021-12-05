@@ -1,0 +1,81 @@
+@use '../../styles/mixins'as *;
+
+@keyframes blinking-cursor {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  color: var(--primary-text-color);
+
+  @include md {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .introduction {
+    display: flex;
+    flex-direction: column;
+    word-break: keep-all;
+    margin-left: 50px;
+
+    .react-rotating-text-cursor {
+      animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+    }
+
+    strong {
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    &.korean {
+      font-weight: 100;
+      font-size: 30px;
+      line-height: 1.2;
+
+      .title {
+        .react-rotating-text-cursor {
+          font-size: 35px;
+          line-height: 35px;
+        }
+      }
+
+      @include md {
+        font-size: 30px;
+
+        .title {
+          .react-rotating-text-cursor {
+            font-size: 35px;
+            line-height: 35px;
+          }
+        }
+      }
+    }
+  }
+
+  .thumbnail {
+    display: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+
+    @include md {
+      display: block;
+    }
+  }
+}

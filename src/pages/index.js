@@ -1,69 +1,74 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
+import React, { useCallback, useState } from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../layout';
+import Seo from '../components/seo';
+import Bio from '../components/bio';
+import Post from '../models/post';
 
-import Bio from "../components/Bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import Sidebar from "../components/Sidebar"
-import PostList from "../components/PostList"
+import { getUniqueCategories } from '../utils/helpers';
+import PostTabs from '../components/post-tabs';
 
-const Post = styled.div`
-  margin-left: 400px;
-  margin-top: 50px;
-`;
-
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
+function HomePage({ data }) {
+  const posts = data.allMarkdownRemark.edges.map(({ node }) => new Post(node));
+  const { author, language } = data.site.siteMetadata;
+  const categories = ['All', ...getUniqueCategories(posts)];
+  const featuredTabIndex = categories.findIndex((category) => category === 'featured');
+  const [tabIndex, setTabIndex] = useState(featuredTabIndex === -1 ? 0 : featuredTabIndex);
+  const onTabIndexChange = useCallback((e, value) => setTabIndex(value), []);
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      <Sidebar />
-      <Post>
-        <PostList posts={posts}></PostList>
-      </Post>
+    <Layout>
+      <Seo title="Home" />
+      <Bio author={author} language={language} />
+      <PostTabs
+        posts={posts}
+        onChange={onTabIndexChange}
+        tabs={categories}
+        tabIndex={tabIndex}
+        showMoreButton
+      />
     </Layout>
-  )
+  );
 }
 
-export default BlogIndex
+export default HomePage;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 500, truncate: true)
+          frontmatter {
+            categories
+            title
+            date(formatString: "MMMM DD, YYYY")
+          }
+          fields {
+            slug
+          }
+        }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          category
+
+    site {
+      siteMetadata {
+        language
+        author {
+          name
+          bio {
+            role
+            description
+            thumbnail
+          }
+          social {
+            github
+            instagram
+            email
+          }
         }
       }
     }
   }
-`
+`;
