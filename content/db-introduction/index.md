@@ -15,6 +15,14 @@ categories: Database
 ### 1. Queries (질의)
 파일 기반 시스템에서는 자신이 원하는 데이터를 조회하기에 한계가 있다.  
 하지만 DBMS에서는 ***DML(Data Manipulation Language)*** 을 이용해 쉽게 데이터를 조회할 수 있고, ***Schema***를 이용해 데이터 구조(Schema)와 데이터를 분리할 수 있다.  
+> #### DML 종류  
+> - **High-level or non-procedural languages (ex. SQL)**  
+>   어떻게 검색할지(**how**)가 아닌 어떤 데이터를 검색할지(**what**)을 명시함 -> **declarative**  
+>   레코드 집합으로 검색하고 나서, 이를 하나하나씩 처리  
+>   **set-at-a-time** or **set-oriented** DML이라고도 불림  
+> - **Low-level or procedural Languages**  
+>   한번에 한 레코드씩 절차적으로 검색  
+>   **record-at-a-time** DML이라고도 불림  
 
 ### 2. Integrity (무결성)
 DBMS에서는 ***제약조건(constraint)*** 을 이용해서 데이터의 일관성을 유지한다.  
