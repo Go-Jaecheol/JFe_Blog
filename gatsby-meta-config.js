@@ -1,5 +1,5 @@
 module.exports = {
-  title: `Jfelog`,
+  title: `J-Felog`,
   description: `Jfe Blog`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://jfelog.netlify.app`,
@@ -72,14 +72,14 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        title: '',
+        title: '등산 소셜게더링 서비스 SANTA 개발',
         description:
-          '',
-        techStack: ['', ''],
-        thumbnailUrl: '',
+          '2021년도 고급웹프로그래밍 & 산림 공공 빅데이터 활용 창업경진대회 프로젝트',
+        techStack: ['React', 'Node.js', 'MongoDB'],
+        thumbnailUrl: 'santa.png',
         links: {
           post: '',
-          github: '',
+          github: 'https://github.com/woong-jae/SANTA',
           demo: '',
         },
       },

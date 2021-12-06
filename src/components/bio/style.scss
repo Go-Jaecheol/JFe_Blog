@@ -74,7 +74,7 @@
     height: 150px;
     border-radius: 100%;
     margin: 0 auto;
-
+    isolation: isolate;
     @include md {
       display: block;
       margin: 0;
