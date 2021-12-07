@@ -24,7 +24,7 @@ function Seo({ description, title }) {
   return (
     <Helmet
       htmlAttributes={{ lang: 'en' }}
-      title={title}
+      title={title + ' | J-Felog'}
       defaultTitle={site.siteMetadata.title}
       meta={[
         {
