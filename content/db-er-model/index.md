@@ -1,6 +1,6 @@
 ---
 emoji: 💁‍♀️
-title: "[Database] Entity-Relationship(ER) model"
+title: "[Database] Entity-Relationship(ER) Model"
 date: '2021-12-07 13:30:00'
 author: JFe
 tags: Database
