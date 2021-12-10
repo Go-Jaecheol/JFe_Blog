@@ -126,6 +126,18 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
+        title: 'STT 서비스간 성능 비교 웹서비스 개발',
+        description:
+          'STT API들의 인식률과 인식 시간에 대한 성능을 비교해서 제공해줍니다. 사용자가 원하는 STT API들을 선택하고 음성 파일과 해당 파일의 원본 텍스트를 입력하면 해당 API들의 인식 결과를 확인할 수 있습니다. 프론트엔드는 React를, 백엔드로는 Node.js를 사용해 개발하였습니다. 기업 연계로 진행된 산학협력 Capstone Design 프로젝트입니다.',
+        techStack: ['React', 'Node.js', 'Docker'],
+        thumbnailUrl: 'beanz.jpg',
+        links: {
+          post: '',
+          github: 'https://github.com/woong-jae/STT-Evaluation',
+          demo: '',
+        },
+      },
+      {
         title: 'Smart Fire Detection System 개발',
         description:
           'Gas sensor와 Flame sensor로 화재를 감지하고 CCTV로 현재 위치에 있는 사람 수를 체크해서 근처 소방서에 알려주는 LG webOS 기반 어플리케이션입니다. 또한, 위험도와 화재 장소까지의 최단거리도 확인할 수 있습니다. 화재 감지와 전달에는 아두이노와 라즈베리파이가 사용되었고, 사람 감지에는 YOLOv4 기술이 사용되었습니다. 프론트엔드는 React 기반 프레임워크인 Enact를, 백엔드로는 Spring을 사용하여 개발하였습니다. LG Soft India에서 주최한 2021 LG webOS Hackathon 출품작이며, 해당 해커톤에서 은상을 수상했습니다.',
