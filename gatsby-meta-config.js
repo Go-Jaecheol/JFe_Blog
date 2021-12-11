@@ -128,9 +128,9 @@ module.exports = {
       {
         title: 'STT 서비스간 성능 비교 웹서비스 개발',
         description:
-          'STT API들의 인식률과 인식 시간에 대한 성능을 비교해서 제공해줍니다. 사용자가 원하는 STT API들을 선택하고 음성 파일과 해당 파일의 원본 텍스트를 입력하면 해당 API들의 인식 결과를 확인할 수 있습니다. 프론트엔드는 React를, 백엔드로는 Node.js를 사용해 개발하였습니다. 기업 연계로 진행된 산학협력 Capstone Design 프로젝트입니다.',
+          'STT API들의 인식률과 인식 시간에 대한 성능을 비교해서 제공해줍니다. 사용자가 원하는 STT API들을 선택하고 음성 파일과 해당 파일의 원본 텍스트를 입력하면 해당 API들의 인식 결과를 확인할 수 있습니다. 프론트엔드는 React를, 백엔드로는 Node.js를 사용해 개발하였습니다. 기업 연계로 진행된 산학협력 Capstone Design 프로젝트로, 2021년 한국정보기술학회 추계 대학생 논문경진대회에도 관련 논문으로 참가하였습니다.',
         techStack: ['React', 'Node.js', 'Docker'],
-        thumbnailUrl: 'beanz.jpg',
+        thumbnailUrl: 'beanz.png',
         links: {
           post: '',
           github: 'https://github.com/woong-jae/STT-Evaluation',
