@@ -9,7 +9,7 @@ module.exports = {
       repo: `Go-Jaecheol/Jfe_Blog`,
     },
   },
-  ga: '0', // Google Analytics Tracking ID
+  ga: 'G-K2809FDDXD', // Google Analytics Tracking ID
   author: {
     name: `Go Jaecheol`,
     bio: {
