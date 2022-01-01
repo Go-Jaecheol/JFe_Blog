@@ -39,8 +39,8 @@ https://www.acmicpc.net/problem/3190
 
 ---
 
-## 예제 입력 1  
-```
+**예제 입력 1**  
+```Python
 6
 3
 3 4
@@ -52,13 +52,13 @@ https://www.acmicpc.net/problem/3190
 17 D
 ```
 
-## 예제 출력 1  
-```
+**예제 출력 1**  
+```Python
 9
 ```
 
-## 예제 입력 2  
-```
+**예제 입력 2**  
+```Python
 10
 4
 1 2
@@ -72,13 +72,13 @@ https://www.acmicpc.net/problem/3190
 13 L
 ```
 
-## 예제 출력 2  
-```
+**예제 출력 2**  
+```Python
 21
 ```
 
-## 예제 입력 3  
-```
+**예제 입력 3**  
+```Python
 10
 5
 1 5
@@ -93,8 +93,8 @@ https://www.acmicpc.net/problem/3190
 13 L
 ```
 
-## 예제 출력 3  
-```
+**예제 출력 3**  
+```Python
 13
 ```
 
