@@ -1,6 +1,6 @@
 
-<h1 align="center">
-  Jfe Blog
+<h1>
+  JFe Blog
 </h1>
 
 https://jfelog.netlify.app/
