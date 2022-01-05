@@ -1,9 +1,15 @@
-import React, { useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Tabs, Tab } from '@mui/material';
 import PostCardColumn from '../post-card-column';
+import useInfiniteScroll from '../infinite-scroll';
 import './style.scss';
 
 function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton }) {
+  const [count, setCount] = useState(5);
+  const [, setRef] = useInfiniteScroll((entry, observer) => {
+    setCount(v => v+3 <= posts.length ? v+3 : posts.length);
+  });
+
   const tabPosts = useMemo(() => {
     if (tabs[tabIndex] === 'All') return posts;
     return posts.filter((post) => post.categories.includes(tabs[tabIndex]));
@@ -25,10 +31,11 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton }) {
         </Tabs>
       </div>
       <PostCardColumn
-        posts={showMoreButton ? tabPosts.slice(0, 4) : tabPosts}
-        showMoreButton={showMoreButton && tabPosts.length > 4}
-        moreUrl={`posts/${tabIndex === 0 ? '' : tabs[tabIndex]}`}
+        posts={showMoreButton ? tabPosts.slice(0, count) : tabPosts}
+        //showMoreButton={showMoreButton && tabPosts.length > 4}
+        //moreUrl={`posts/${tabIndex === 0 ? '' : tabs[tabIndex]}`}
       />
+      <div ref={setRef}/>
     </div>
   );
 }
