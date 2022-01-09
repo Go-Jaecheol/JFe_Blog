@@ -1,6 +1,5 @@
+# JFe Blog
 
-<h1>
-  JFe Blog
-</h1>
+*Powered by Gatsby*  
 
 https://jfelog.netlify.app/
