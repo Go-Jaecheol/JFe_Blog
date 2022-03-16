@@ -40,6 +40,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        host: 'https://jfelog.netlify.app',
+        sitemap: 'https://jfelog.netlify.app/sitemap-pages.xml',
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {

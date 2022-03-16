@@ -1,5 +1,5 @@
 ---
-emoji: 🏫
+emoji: 🙋‍♀️
 title: "[Database] Basic SQL Queries"
 date: '2022-03-16 04:50:00'
 author: JFe
@@ -110,6 +110,56 @@ UNION
 ```sql
 [...]
 ORDER BY D.Dname DESC, E.Lname ASC, E.Fname ASC;
+```
+
+---
+
+## ✔ INSERT 문
+
+relation에 tuple을 **추가**하기 위해 사용
+
+- attribute 값은 `CREATE TABLE`문에 지정된 attribute와 같은 순서로 나열되어야 한다.  
+- 데이터 타입에 대한 **제약 조건**은 자동으로 작동하여, 잘못된 값이 들어오면 거부된다.  
+- DDL문으로서 **무결성 제약조건**이 적용된다.  
+
+```sql
+INSERT INTO EMPLOYEE (Fname, Lname, Dno)
+VALUES ('Fernando', 'Tatis', 4);
+```
+위 예시와 같이 원하는 attribute 값만 명시하여 INSERT문을 작성할 수 있다.  
+(=> 명시되지 않은 값들은 **DEFAULT** 또는 **NULL**로 설정됨)  
+attribute 값을 명시하지 않을 경우, **NULL**을 포함한 모든 값을 작성해야 한다.  
+
+---
+
+## ❌ DELETE 문
+
+조건에 맞는 relation에서 tuple을 삭제하기 위해 사용
+
+- `WHERE` 절의 조건에 만족하는 tuple을 선택해 제거한다.  
+- tuple은 한 번에 하나의 테이블에서만 삭제된다.  
+- **참조 무결성**이 지켜져야한다.  
+- `CASCADE`가 **참조 무결성 제약조건**에 설정되어 있으면, 삭제할 tuple을 참조하는 모든 tuple이 삭제된다.  
+
+```sql
+DELETE FROM EMPLOYEE
+WHERE Dno = 5;
+```
+
+---
+
+## ✂ UPDATE 문
+
+조건에 맞는 relation에서 tuple을 업데이트하기 위해 사용
+
+- `WHERE` 절의 조건에 만족하는 tuple을 선택한다.  
+- `SET` 절은 수정할 attribute와 그 값을 지정한다.  
+- 이런 트리거 작업이 **참조 무결성 제약조건**에 설정되어 있으면, **Primary Key** 값 업데이트는 다른 테이블에 있는 tuple의 **Foreign Key** 값으로 전파될 수 있다.
+
+```sql
+UPDATE EMPLOYEE E
+SET E.Dno = 5,
+WHERE E.Lname = 'Tatis';
 ```
 
 ```toc
