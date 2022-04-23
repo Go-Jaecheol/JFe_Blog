@@ -3,8 +3,8 @@ emoji: 🍺
 title: "[Elastic] Elastic Stack(ELK Stack) - Mac OS 설치 방법"
 date: '2022-04-06 14:00:00'
 author: JFe
-tags: Back-end
-categories: Back-end
+tags: Database
+categories: Database
 ---
 
 ## 1. Homebrew 설치  

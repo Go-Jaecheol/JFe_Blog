@@ -3,8 +3,8 @@ emoji: 📚
 title: "[Elastic] Elastic Stack(ELK Stack) 소개"
 date: '2022-04-06 10:00:00'
 author: JFe
-tags: Back-end
-categories: Back-end
+tags: Database
+categories: Database
 ---
 
 ![the-elastic-stack.png](the-elastic-stack.png)  

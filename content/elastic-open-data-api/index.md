@@ -3,8 +3,8 @@ emoji: 🏢
 title: "[Elastic] Elastic Stack + 공공데이터 api 활용"
 date: '2022-04-09 15:30:00'
 author: JFe
-tags: Back-end
-categories: Back-end
+tags: Database
+categories: Database
 ---
 
 ## 1. 공공데이터 api 준비  
