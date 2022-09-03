@@ -48,7 +48,7 @@ categories: 일상
 5. `[NCSOFT] 2022 인턴` - 코테 + 서류 탈  
 6. `[LINE] 2022 SUMMER LINE 채용 연계형 INTERNSHIP` - 코테 탈  
 7. `[SKT] 2022 SK텔레콤 T-WorX` - 코테 탈  
-8. `[NAVER] 2022 네이버 기술 직군 신입 채용 : Track_공채` - ??  
+8. `[NAVER] 2022 네이버 기술 직군 신입 채용 : Track_공채` - 1차 면접 탈  
 9. `[프로그래머스] 2022 Dev-Matching: 웹 백엔드 개발자(상반기)-2` - ??  
 
 
