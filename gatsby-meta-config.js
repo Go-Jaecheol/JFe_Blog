@@ -105,6 +105,15 @@ module.exports = {
           demo: '',
         },
       },
+      {
+        date: '2022.11',
+        activity: '2022 대경권 대학생 AI 프로그래밍 경진대회 장려상 수상',
+        links: {
+          post: '',
+          github: '',
+          demo: '',
+        },
+      },
     ],
 
     projects: [
