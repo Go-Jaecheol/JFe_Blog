@@ -171,24 +171,115 @@ Q
 
 ---
 
-### ✅ enum!!
+### ✅ Enum!!
 
+![requirement-enum.png](requirement-enum.png)  
 
+이전 주차 미션에서도 Enum을 사용했지만 그 때는 처음 접하는 거라 어떤 상황에서 사용해야 하는지, 어떻게 사용해야 하는지 잘 모르는 상태로 사용했다.  
+그렇기 때문에 이번 미션에서는 Enum에 대해 정리된 여러 문서들을 참고해서 Enum에 대해 알아본 후 구현했다.  
+
+우선 이번 미션에서는 다리를 생성하기 위해 `BridgeNumberGenerator`를 사용하는데 여기서는 0과 1 중 랜덤한 정수 값이 반환된다.  
+그러면 이 정수 값들을 저장해서 생성된 다리 정보를 저장해야 하는데 처음 요구 사항에서 주어진 `makeBridge` 메서드의 반환 값은 `List<String>`이다.  
+따라서 랜덤 생성된 정수 값을 문자열로 반환해서 저장하는 과정이 필요했고, 이 과정을 Enum을 사용하여 해결하면 되겠다고 생각했다.  
+
+**1**이면 `"U"`, **0**이면 `"D"`로 반환해주면 됐기 때문에 이 값들을 각각 매핑해주고 필드 값들을 추가했다.  
+
+```java
+public enum Position {
+    UP(1, "U"),
+    DOWN(0, "D");
+
+    private final int positionNumber;
+    private final String positionValue;
+
+    Position(int positionNumber, String positionValue) {
+        this.positionNumber = positionNumber;
+        this.positionValue = positionValue;
+    }
+```
+
+다음으로 이 `positionNumber`를 `positionValue`로 변환해주는 기능이 필요했는데, 다음과 같은 메서드를 만들고 **stream**을 이용해 값을 반환하도록 했다.  
+
+```java
+public static String convertNumberToValue(int number) {
+    return Arrays.stream(Position.values())
+            .filter(position -> position.positionNumber == number)
+            .findAny()
+            .orElseThrow(() -> new IllegalArgumentException("[ERROR] 0 또는 1의 값만 가능합니다."))
+            .positionValue;
+}
+```
+
+또한 게임의 성공 여부를 출력하는 부분에서도 불필요한 **if**문이 반복되어서 이를 해결하기 위해 **Enum**을 사용해야겠다고 생각해 리팩토링했다.  
+
+```java
+private static void printIsSuccess(boolean status) {
+    if (status) {
+        System.out.println("게임 성공 여부: 성공");
+    }
+    if (!status) {
+        System.out.println("게임 성공 여부: 실패");
+    }
+}
+```
+
+위와 같이 `status` 불리언 값에 따라 출력 값이 달라지는 경우였다.  
+하지만 이렇게 **if**문을 나눠서 사용하는 것은 **else** 예약어를 사용하지 말라는 요구 사항에도 맞지 않다고 생각했고, **Enum**을 사용해 해결할 수 있을 거라 생각했다.  
+
+```java
+public enum Status {
+    SUCCESS(true, "성공"),
+    FAIL(false, "실패");
+
+    private final boolean check;
+    private final String message;
+
+    Status(boolean check, String message) {
+        this.check = check;
+        this.message = message;
+    }
+
+    public static String convertCheckToMessage(boolean check) {
+        return Arrays.stream(Status.values())
+                .filter(status -> status.check == check)
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException())
+                .message;
+    }
+}
+```
+
+앞선 `Position` **enum 클래스**와 거의 비슷하게 `Status` **enum 클래스**를 만들고,  
+**boolean** 값을 **String** 값으로 변환해주는 메서드도 만들었다.  
+
+```java
+private static void printIsSuccess(boolean status) {
+    System.out.println("게임 성공 여부: " + Status.convertCheckToMessage(status));
+}
+```
+
+이를 이용해 위에서 **if**문이 반복되어 문제가 되었던 코드도 한 줄로 깔끔하게 리팩토링 할 수 있었다.  
 
 ---
 
 
 ## 🔒 Keep
 
-
+- **요구 사항**을 반영하면서 **MVC 패턴**에 가깝게 설계하기  
+- **getter**를 사용하는 대신에 **필요한 메시지**만 주고 받는 메서드를 만들어서 사용하기  
+- 불필요하게 if문이 반복되는 코드가 있으면 **Enum**을 이용해 리팩토링하기  
 
 ## 🚧 Problem
 
-
+- 설계와 구현은 열심히 했지만 **다양한 상황**에 대한 **테스트 코드** 작성이 아직 부족함  
+- 여전히 **getter**가 필요하다고 판단해서 사용한 곳들이 있는데, 이 때 외부에서 **값이 변경될 가능성**이 있음  
+- `OutputView`에 단순하게 정해진 문자열만 출력하면 되는 메서드들이 있음(**Enum**을 사용하면 관리하기 보다 편할 것 같음)  
 
 ## 🎯 Try
 
-
+- **테스트 코드** 작성에도 집중하자  
+- getter 사용이 필요한 경우에는 `Collections.unmodifiableList()` 같은 **Unmodifiable Collection**을 사용하자  
+- 정해진 문자열을 출력하는 부분도 **Enum** 사용 고려해보자  
 
 ---
 
