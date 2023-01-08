@@ -3,8 +3,8 @@ emoji: 🌉
 title: "[우아한테크코스] 우테코 프리코스 4주차 회고"
 date: '2022-12-28 20:00:00'
 author: JFe
-tags: Project
-categories: Project
+tags: 우테코
+categories: 우테코
 ---
 
 프리코스 끝난지 한달 됐는데 아직 회고 쓰는 사람이 있다..?! 그게 나야  

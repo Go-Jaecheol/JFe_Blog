@@ -3,8 +3,8 @@ emoji: ⚾
 title: "[우아한테크코스] 우테코 프리코스 2주차 회고"
 date: '2022-11-26 23:00:00'
 author: JFe
-tags: Project
-categories: Project
+tags: 우테코
+categories: 우테코
 ---
 
 지난 10월 26일부터 우테코 프리코스를 시작했다.  
