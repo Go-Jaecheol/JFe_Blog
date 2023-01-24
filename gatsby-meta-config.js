@@ -20,6 +20,7 @@ module.exports = {
     social: {
       github: `https://github.com/Go-Jaecheol`, 
       instagram: `https://www.instagram.com/j4e_fe`, 
+      post: `https://jfelog.tistory.com`, 
       email: ``,
     },
   },
