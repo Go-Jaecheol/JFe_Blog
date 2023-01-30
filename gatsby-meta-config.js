@@ -3,7 +3,7 @@ module.exports = {
   description: `Jfe Blog`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://jfelog.netlify.app`,
-  ogImage: `/og-image.png`, // Path to your in the 'static' folder
+  ogImage: `/favicon.png`, // Path to your in the 'static' folder
   comments: {
     utterances: {
       repo: `Go-Jaecheol/Jfe_Blog`,
